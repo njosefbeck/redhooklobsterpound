@@ -20,7 +20,6 @@ a:link,
 a:active,
 a:visited {
 	color: $red;
-	text-decoration: none;
 }
 
 p {
@@ -46,9 +45,14 @@ header {
 	}
 }
 
+main {
+	margin-bottom: 40px;
+}
+
 footer {
 	text-align: center;
 	font-size: 14px;
+	margin-bottom: 40px;
 }
 
 h1,
@@ -58,4 +62,9 @@ h4,
 h5,
 h6 {
 	margin-top: 0;
+}
+
+img.aligncenter {
+	display: block;
+	margin: 0 auto;
 }

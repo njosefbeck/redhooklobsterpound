@@ -1,0 +1,29 @@
+.hero {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 56.25%;
+	margin-bottom: 40px;
+	position: relative;
+
+	.title {
+		color: #FFF;
+		text-transform: uppercase;
+		font-size: 40px;
+		padding: 10px;
+		margin-bottom: 0;
+		font-weight: 400;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		@media (min-width: 600px) {
+			font-size: 70px;
+		}
+
+		@media (min-width: 800px) {
+			font-size: 100px;
+		}
+	}
+}

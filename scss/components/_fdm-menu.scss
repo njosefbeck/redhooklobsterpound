@@ -1,0 +1,17 @@
+.fdm-menu {
+	.fdm-section-header {
+		border-bottom: 0;
+
+		h3 {
+			font-size: 24px;
+		}
+	}
+
+	.fdm-item-panel {
+		.fdm-item-title {
+			color: $red;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+}
