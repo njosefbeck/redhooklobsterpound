@@ -11,12 +11,12 @@
 
 	<div class="social-media-icons">
 		<div class="icon">
-			<a href="https://facebook.com" target="_blank" rel="noopener">
+			<a href="https://www.facebook.com/RedHookLobsterPoundDC/" target="_blank" rel="noopener">
 				<i class="fa fa-facebook" aria-hidden="true"></i>
 			</a>
 		</div>
 		<div class="icon">
-			<a href="https://facebook.com" target="_blank" rel="noopener">
+			<a href="https://twitter.com/LobstertruckDC" target="_blank" rel="noopener">
 				<i class="fa fa-twitter" aria-hidden="true"></i>
 			</a>
 		</div>
