@@ -1,4 +1,4 @@
-naked-wordpress
+Red Hook Lobster Pound D.C. WordPress Theme
 ===============
 
-A well-commented blank Wordpress theme.
+WordPress theme created for Red Hook Lobster Pound D.C.
