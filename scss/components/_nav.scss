@@ -1,0 +1,141 @@
+nav {
+	text-align: center;
+
+	.hamburger {
+		background-color: #fff;
+		border: 0;
+		font-size: 30px;
+		margin-bottom: 20px;
+		text-align: center;
+		cursor: pointer;
+
+		@media (min-width: 600px) {
+			display: none;
+		}
+	}
+
+	svg {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		opacity: 0;
+		z-index: -1;
+		visibility: hidden;
+		cursor: pointer;
+
+		&.visible {
+			visibility: visible;
+			opacity: 1;
+			z-index: 12;
+		}
+
+		@media (min-width: 600px) {
+			display: none;
+		}
+	}
+
+	.menu-main-nav-container {
+		visibility: hidden;
+		opacity: 0;
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(10, 50, 85, 0.4);
+		transition: all 0.3s ease-in;
+
+		&.visible {
+			visibility: visible;
+			opacity: 1;
+			z-index: 10;
+			overflow-y: scroll;
+		}
+
+		@media (min-width: 600px) {
+			visibility: visible;
+			opacity: 1;
+			z-index: 0;
+			position: relative;
+			top: inherit;
+			bottom: inherit;
+			left: inherit;
+			right: inherit;
+			background-color: transparent;
+		}
+	}
+
+	.menu {
+		list-style-type: none;
+		padding-left: 0;
+		margin-top: 0;
+		background-color: #FFF;
+		width: 85%;
+		border: 3px solid $black;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		a {
+			color: $black;
+			display: block;
+			font-size: 5vh;
+			padding-top: 3vh;
+			padding-bottom: 3vh;
+			width: 100%;
+
+			@media (min-width: 600px) {
+				font-size: 18px;
+				font-weight: 700;
+				padding-top: 0;
+				padding-bottom: 0;
+				width: auto;
+				border-bottom: 3px solid transparent;
+				transition: all 0.4s ease-in;
+
+				&:hover {
+					border-bottom: 3px solid $black;
+				}
+			}
+		}
+
+		.menu-item {
+			border-bottom: 3px solid $black;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			@media (min-width: 600px) {
+				border-bottom: 0;
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-bottom: 10px;
+			}
+		}
+
+		.current-menu-item,
+		.current_page_item {
+			background-color: $gray;
+		}
+
+		@media (min-width: 600px) {
+			background-color: transparent;
+			width: 80%;
+			margin: 0 auto 20px;
+			border: 0;
+			position: relative;
+			top: inherit;
+			left: inherit;
+			transform: translate(0);
+			text-transform: uppercase;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+	}
+}

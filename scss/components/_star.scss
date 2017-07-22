@@ -1,0 +1,26 @@
+.stars {
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
+	padding-bottom: 70px;
+}
+
+.star {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 10px;
+}
+
+.star-left {
+	left: 10px;
+}
+
+.star-center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.star-right {
+	right: 10px;
+}
