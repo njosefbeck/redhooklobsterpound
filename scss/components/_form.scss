@@ -1,0 +1,26 @@
+form {
+	input,
+	textarea {
+		width: 100%;
+		border: 3px solid $black;
+		color: $black;
+		margin-top: 10px;
+		padding: 5px 10px;
+	}
+
+	input {
+		@media (min-width: 600px) {
+			width: 400px;
+		}
+	}
+
+	input[type="submit"] {
+		color: #FFF;
+		background-color: $black;
+		margin-top: 0;
+
+		@media (min-width: 600px) {
+			width: 200px;
+		}
+	}
+}
