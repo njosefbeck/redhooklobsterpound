@@ -19,14 +19,14 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				?>
 
 					<article class="post">
-					
-						<h1 class="title">
-							<a href="<?php the_permalink(); // Get the link to this post ?>" title="<?php the_title(); ?>">
-								<?php the_title(); // Show the title of the posts as a link ?>
+						<h2 class="title">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+								<?php the_title(); ?>
 							</a>
-						</h1>
+						</h2>
+
 						<div class="post-meta">
-							<?php the_time('m/d/Y'); // Display the time published ?> | 
+							<?php the_time('F j, Y'); // Display the time published ?> | 
 							<?php if( comments_open() ) : // If we have comments open on this post, display a link and count of them ?>
 								<span class="comments-link">
 									<?php comments_popup_link( __( 'Comment', 'break' ), __( '1 Comment', 'break' ), __( '% Comments', 'break' ) ); 
@@ -35,22 +35,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 								</span>
 							<?php endif; ?>
 						
-						</div><!--/post-meta -->
+						</div>
 						
 						<div class="the-content">
-							<?php the_content( 'Continue...' ); 
-							// This call the main content of the post, the stuff in the main text box while composing.
-							// This will wrap everything in p tags and show a link as 'Continue...' where/if the
-							// author inserted a <!-- more --> link in the post body
-							?>
-							
-							<?php wp_link_pages(); // This will display pagination links, if applicable to the post ?>
-						</div><!-- the-content -->
-		
-						<div class="meta clearfix">
-							<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
-							<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); // Display the tags this post has, as links separated by spaces and pipes ?></div>
-						</div><!-- Meta -->
+							<?php the_excerpt(); ?>
+						</div>
 						
 					</article>
 
