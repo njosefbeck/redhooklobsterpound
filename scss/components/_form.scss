@@ -23,4 +23,27 @@ form {
 			width: 200px;
 		}
 	}
+
+	// STYLES SPECIFIC TO WPCF7
+	span.wpcf7-not-valid-tip {
+		color: $red;
+		margin-top: 5px;
+	}
+
+	div.wpcf7-validation-errors {
+		border: 0;
+		background-color: $red;
+		color: #FFF;
+	}
+
+	div.wpcf7-response-output {
+		padding: 10px;
+		margin: 20px 0 0 0;
+	}
+
+	div.wpcf7-mail-sent-ok {
+		border: 0;
+		background-color: $black;
+		color: #FFF;
+	}
 }

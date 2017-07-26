@@ -22,7 +22,7 @@
 		</div>
 	</div>
 	<div class="border border-footer"></div>
-	<?php echo date("Y"); ?> Red Hook Lobster Pound D.C.<br/>
+	&copy; <?php echo date("Y"); ?> Red Hook Lobster Pound D.C.<br/>
 	Made with love by <a href="https://twobeasts.co" target="_blank" rel="noopener">Two Beasts</a>
 </footer>
 
