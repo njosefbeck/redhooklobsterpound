@@ -30,7 +30,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri(); ?>/images/icons/favicon-16x16.png">
 
 <!-- Manifest files, for Android -->
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/images/icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
