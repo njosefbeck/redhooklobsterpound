@@ -1,0 +1,102 @@
+.tweets-header {
+	text-align: center;
+	margin-bottom: 20px;
+
+	i {
+		font-size: 25px;
+	}
+
+	h2 {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.tweets {
+	.tweet {
+		margin-bottom: 60px;
+
+		@media (min-width: 600px) {
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 30px;
+			padding-right: 30px;
+			width: 50%;
+		}
+	}
+
+	.tweet-header {
+		font-weight: 700;
+		text-align: left;
+
+		img {
+			width: 40px;
+			border-radius: 5px;
+			margin-right: 5px;
+			float: left;
+		}
+
+		p {
+			line-height: 1;
+			margin: 0 0 20px 0;
+		}
+
+		a {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+
+	.tweet-content {
+		line-height: 1.4;
+		text-align: left;
+	}
+
+	.twitter-intents {
+		margin: 0;
+		text-align: left;
+
+		p {
+			display: inline-block;
+			margin: 0 5px 0;
+
+			a {
+				text-transform: uppercase;
+				font-size: 12px;
+			}
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.tweet-timestamp {
+		text-align: left;
+		margin: 0;
+		font-size: 12px;
+	}
+
+	.tweet-separator {
+		margin-top: 20px;
+
+		img {
+			max-width: 50px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		@media (min-width: 600px) {
+			display: none;
+		}
+	}
+
+	@media (min-width: 600px) {
+		text-align: center;
+	}
+}
