@@ -1,0 +1,14 @@
+.product {
+	text-align: center;
+
+	img {
+		max-width: 200px;
+		margin-bottom: 20px;
+	}
+
+	.description,
+	.price {
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+}
