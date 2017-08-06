@@ -8,7 +8,8 @@ form[target="paypal"] {
 		width: 100%;
 
 		select {
-			width: 70px;
+			max-width: 100%;
+			width: 210px;
 			margin-top: 0;
 		}
 	}

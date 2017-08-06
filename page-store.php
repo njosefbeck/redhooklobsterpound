@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying any single page.
+ * 	Template Name: Store
  *
- */
+ *	Store page template
+ *
+*/
 
 get_header(); // This fxn gets the header.php file and renders it ?>
 	
@@ -41,39 +43,84 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					</div>
 
 					<div class="product featured-product">
-					<?php
-						$featured_product_name = get_field('featured_product_name');
-						$featured_product_images = get_field('featured_product_images');
-						$featured_product_description = get_field('featured_product_description');
-						$featured_product_price = get_field('featured_product_price');
-						$featured_product_paypal_button_html = get_field('featured_product_paypal_button_html');
-					?>
+						<?php
+							$featured_product_name = get_field('featured_product_name');
+							$featured_product_images = get_field('featured_product_images');
+							$featured_product_description = get_field('featured_product_description');
+							$featured_product_price = get_field('featured_product_price');
+							$featured_product_paypal_button_html = get_field('featured_product_paypal_button_html');
+						?>
 
-					<?php if ($featured_product_name) : ?>
-						<h2><?php echo $featured_product_name; ?></h2>
-					<?php endif; ?>
+						<?php if ($featured_product_name) : ?>
+							<h2><?php echo $featured_product_name; ?></h2>
+						<?php endif; ?>
 
-					<?php if ($featured_product_images) : ?>
-						<div class="product-images">
-							<?php foreach( $featured_product_images as $image): ?>
-								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-							<?php endforeach; ?>
+						<?php if ($featured_product_images) : ?>
+							<div class="product-images">
+								<?php foreach( $featured_product_images as $image): ?>
+									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if ($featured_product_description) : ?>
+							<p class="description"><?php echo $featured_product_description; ?></p>
+						<?php endif; ?>
+
+						<?php if ($featured_product_price) : ?>
+							<p class="price"><?php echo $featured_product_price; ?></p>
+						<?php endif; ?>
+
+						<?php if ($featured_product_paypal_button_html) : ?>
+							<?php echo $featured_product_paypal_button_html; ?>
+						<?php endif; ?>
+					</div>
+
+					<?php if (have_rows('products')) : ?>
+						<div class="products">
+
+							<?php
+								$count = count(get_field('products'));
+								$haveMoreThanTwoProducts = $count > 2;
+							?>
+
+							<?php while (have_rows('products')) : the_row();
+								$name = get_sub_field('product_name');
+								$images = get_sub_field('product_images');
+								$description = get_sub_field('product_description');
+								$price = get_sub_field('product_price');
+								$paypal_button_html = get_sub_field('product_paypal_button_html');
+							?>
+
+							<div class="product<?php if ($haveMoreThanTwoProducts) : ?><?php echo ' has-more-than-two'; ?><?php endif; ?>">
+								<?php if ($name) : ?>
+									<h2><?php echo $name; ?></h2>
+								<?php endif; ?>
+
+								<?php if ($images) : ?>
+									<div class="product-images">
+										<?php foreach( $images as $image): ?>
+											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
+
+								<?php if ($description) : ?>
+									<p class="description"><?php echo $description; ?></p>
+								<?php endif; ?>
+
+								<?php if ($price) : ?>
+									<p class="price"><?php echo $price; ?></p>
+								<?php endif; ?>
+
+								<?php if ($paypal_button_html) : ?>
+									<?php echo $paypal_button_html; ?>
+								<?php endif; ?>
+							</div>
+
+							<?php endwhile; ?>
 						</div>
 					<?php endif; ?>
-
-					<?php if ($featured_product_description) : ?>
-						<p class="description"><?php echo $featured_product_description; ?></p>
-					<?php endif; ?>
-
-					<?php if ($featured_product_price) : ?>
-						<p class="price"><?php echo $featured_product_price; ?></p>
-					<?php endif; ?>
-
-					<?php if ($featured_product_paypal_button_html) : ?>
-						<?php echo $featured_product_paypal_button_html; ?>
-					<?php endif; ?>
-
-					</div>
 					
 				</article>
 
