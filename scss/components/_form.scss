@@ -19,6 +19,11 @@ form {
 		color: #FFF;
 		background-color: $black;
 		margin-top: 0;
+		font-family: $site-font;
+
+		&:hover {
+			cursor: pointer;
+		}
 
 		@media (min-width: 600px) {
 			width: 200px;

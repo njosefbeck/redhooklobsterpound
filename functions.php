@@ -56,6 +56,7 @@ add_action( 'widgets_init', 'naked_register_sidebars' );
 function naked_scripts()  { 
 
 	// get the theme directory style.css and link to it in the header
+	wp_enqueue_style('mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-10_7.css');
 	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css');
 	
 	// add theme scripts
