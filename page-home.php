@@ -1,9 +1,8 @@
 <?php 
 /**
- * 	Template Name: Sidebar/Home Page
+ * 	Template Name: Home Page
  *
- *	This page template has a sidebar built into it, 
- * 	and can be used as a home page, in which case the title will not show up.
+ *	This is the template for the home page
  *
 */
 get_header(); ?>
@@ -30,6 +29,31 @@ get_header(); ?>
 						// This will wrap everything in paragraph tags
 						?>
 					</div>
+
+					<?php if (have_rows('schedule')) : ?>
+						<div class="tabs-header">
+							<h2>Where's the truck?</h2>
+						</div>
+
+						<div class="tabs">
+							<?php // Separate while statements for the tab navigation and then body ?>
+							
+							<?php $nav_index = 0; ?>
+							<?php while (have_rows('schedule')) : the_row(); ?>
+								<input id="tab<?php echo $nav_index;?>" type="radio" name="tabs" <?php if($nav_index === 0) : ?>checked<?php endif; ?>>
+								<label for="tab<?php echo $nav_index;?>"><?php echo the_sub_field('location_name'); ?></label>
+								<?php $nav_index++; ?>
+							<?php endwhile; ?>
+
+							<?php $content_index = 0; ?>
+							<?php while (have_rows('schedule')) : the_row(); ?>
+								<section id="content<?php echo $content_index; ?>" class="tab-content">
+									<?php echo the_sub_field('calendar'); ?>
+									<?php $content_index++; ?>
+								</section>
+							<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
 
 					<div class="tweets-header">
 						<i class="fa fa-twitter" aria-hidden="true"></i>
@@ -142,6 +166,36 @@ get_header(); ?>
 							echo '</div>';
 						}
 					?>
+
+					<?php
+						$banner_text = get_field('banner_text');
+						$banner_link = get_field('banner_link');
+						$banner_text_color = get_field('banner_text_color');
+						$banner_bg_color = get_field('banner_background_color');
+						$banner_exists = $banner_text | $banner_link | $banner_text_color | $banner_bg_color;
+					?>
+
+					<?php if ($banner_exists) : ?>
+						<?php if (!$banner_text_color && !$banner_bg_color) : ?>
+							<a class="banner-link" href="<?php echo $banner_link; ?>">
+								<div class="banner">
+									<?php echo $banner_text; ?>
+								</div>
+							</a>
+						<?php elseif (!$banner_bg_color) : ?>
+							<a class="banner-link" href="<?php echo $banner_link; ?>">
+								<div class="banner" style="color: <?php echo $banner_text_color; ?>">
+									<?php echo $banner_text; ?>
+								</div>
+							</a>
+						<?php else : ?>
+							<a class="banner-link" href="<?php echo $banner_link; ?>">
+								<div class="banner" style="color: <?php echo $banner_text_color; ?>; background-color: <?php echo $banner_bg_color; ?>;">
+									<?php echo $banner_text; ?>
+								</div>
+							</a>
+						<?php endif; ?>
+					<?php endif; ?>
 					
 				</article>
 

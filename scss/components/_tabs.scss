@@ -1,0 +1,64 @@
+.tabs-header {
+  text-align: center;
+}
+
+.tabs {
+  margin-bottom: 60px;
+
+  .fc-toolbar {
+    display: none;
+  }
+
+  .fc-unthemed .fc-today {
+    background-color: rgba(211, 50, 58, 0.2);
+  }
+
+  h2 {
+    font-family: $site-font;
+    display: none;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 0;
+    border-top: 1px solid #ddd;
+  }
+
+  label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+
+    &:hover {
+      color: #888;
+      cursor: pointer;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked + label {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid $black;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  #tab0:checked ~ #content0,
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3 {
+    display: block;
+  }
+
+  .post-edit-link {
+    display: none;
+  }
+}
+
