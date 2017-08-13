@@ -13,3 +13,22 @@ function toggleMenu() {
 
 hamburger.addEventListener('click', toggleMenu);
 closeNavButton.addEventListener('click', toggleMenu);
+
+const handleEmptyCalendars = function() {
+	const calendars = document.querySelectorAll('.fc-agendaWeek-view');
+	calendars.forEach((calendar) => {
+		if (!calendar.hasChildNodes()) {
+			console.log('I do not have children!');
+			calendar.innerHTML = 'There is no schedule to show at this time.';
+		}
+	});
+};
+
+if (
+	document.readyState === 'complete' ||
+	(document.readyState !== 'loading' && !document.documentElement.doScroll)
+) {
+	handleEmptyCalendars();
+} else {
+	document.addEventListener('DOMContentLoaded', handleEmptyCalendars);
+}

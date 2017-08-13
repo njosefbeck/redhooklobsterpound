@@ -22,6 +22,12 @@
     display: none;
     padding: 0;
     border-top: 1px solid #ddd;
+
+    .simcal-calendar,
+    .simcal-fullcalendar,
+    .simcal-fullcalendar-grid {
+      font-family: $site-font;
+    }
   }
 
   label {
@@ -30,7 +36,7 @@
     padding: 15px 25px;
     font-weight: 600;
     text-align: center;
-    color: #bbb;
+    color: rgba(211, 50, 58, 0.5);
     border: 1px solid transparent;
 
     &:hover {
@@ -43,7 +49,7 @@
     display: none;
 
     &:checked + label {
-      color: #555;
+      color: $red;
       border: 1px solid #ddd;
       border-top: 2px solid $black;
       border-bottom: 1px solid #fff;
