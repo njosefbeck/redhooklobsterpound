@@ -5,6 +5,16 @@ const menuContainer = document.querySelector('.menu-main-nav-container');
 const body = document.querySelector('body');
 const closeNavButton = document.querySelector('nav svg');
 
+// Add browser support for NodeList forEach
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+        thisArg = thisArg || window;
+        for (var i = 0; i < this.length; i++) {
+            callback.call(thisArg, this[i], i, this);
+        }
+    };
+}
+
 function toggleMenu() {
 	menuContainer.classList.toggle("visible");
 	body.classList.toggle("fixed");
@@ -18,8 +28,7 @@ const handleEmptyCalendars = function() {
 	const calendars = document.querySelectorAll('.fc-agendaWeek-view');
 	calendars.forEach((calendar) => {
 		if (!calendar.hasChildNodes()) {
-			console.log('I do not have children!');
-			calendar.innerHTML = 'There is no schedule to show at this time.';
+			calendar.innerHTML = '<p>There is no schedule to show at this time.</p>';
 		}
 	});
 };

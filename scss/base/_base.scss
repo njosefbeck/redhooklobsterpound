@@ -20,6 +20,11 @@ a:link,
 a:active,
 a:visited {
 	color: $red;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 pre {
@@ -53,6 +58,7 @@ header {
 
 main {
 	margin-bottom: 40px;
+	overflow-x: hidden;
 }
 
 footer {
@@ -61,6 +67,17 @@ footer {
 	margin-bottom: 40px;
 	padding-left: 0;
 	padding-right: 0;
+
+	.footer-nav .menu {
+		list-style-type: none;
+		padding-left: 0;
+
+		.menu-item {
+			display: inline-block;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
 }
 
 h1,

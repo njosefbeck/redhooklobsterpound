@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying any single page.
+ * 	Template Name: About Page
  *
- */
+ *	This is the template for the about page
+ *
+*/
 
 get_header(); // This fxn gets the header.php file and renders it ?>
 	<?php if ( have_posts() ) : 
@@ -38,6 +40,25 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 					
 					<?php wp_link_pages(); // This will display pagination links, if applicable to the page ?>
 				</div>
+
+				<?php
+					$args = [ 'numberposts' => 5];
+					$recent_posts = wp_get_recent_posts($args);
+				?>
+
+				<?php if ($recent_posts) : ?>
+					<div class="recent-posts">
+						<h2>Recent Press</h2>
+						<ul>
+							<?php foreach($recent_posts as $post) : ?>
+								<li>
+									<a href="<?php echo get_permalink($post['ID']); ?>"> <?php echo $post['post_title']; ?></a>
+								</li>
+							<?php endforeach; ?>
+							<li><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">See more press...</a></li>
+						</ul>
+					</div>
+				<?php endif; ?>
 				
 			</article>
 
