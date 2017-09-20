@@ -23,3 +23,23 @@
 		text-align: center;
 	}
 }
+
+.blog .post-excerpt {
+	margin-bottom: 40px;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.title {
+		margin-bottom: 10px;
+	}
+
+	.next-page,
+	.past-page {
+		a {
+			font-size: 18px;
+			font-weight: 700;
+		}
+	}
+}

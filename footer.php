@@ -20,13 +20,18 @@
 				<i class="fa fa-twitter" aria-hidden="true"></i>
 			</a>
 		</div>
+		<div class="icon">
+			<a href="https://www.instagram.com/lobstertruckdc/" target="_blank" rel="noopener">
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			</a>
+		</div>
 	</div>
 	<div class="border border-footer"></div>
 	<div class="footer-nav">
 		<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
 	</div>
 	&copy; <?php echo date("Y"); ?> Red Hook Lobster Pound D.C.<br/>
-	Made with love by <a href="https://twobeasts.co" target="_blank" rel="noopener">Two Beasts</a>
+	Made with love by <a href="https://twobeasts.co" target="_blank">Two Beasts</a>
 </footer>
 
 <?php wp_footer(); 

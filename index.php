@@ -1,10 +1,11 @@
 <?php
 /**
- * This template will be called in any case where the Wordpress engine 
+ * This template styles the press page
+ * This template will also be called in any case where the Wordpress engine 
  * doesn't know which template to use (e.g. 404 error)
  */
 
-get_header(); // This fxn gets the header.php file and renders it ?>
+get_header(); ?>
 	<?php if ( have_posts() ) : 
 	// Do we have any posts in the databse that match our query?
 	// In the case of the home page, this will call for the most recent posts 
@@ -14,7 +15,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		// If we have some posts to show, start a loop that will display each one the same way
 		?>
 
-			<article class="post">
+			<article class="post-excerpt">
 				<h2 class="title">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php the_title(); ?>
@@ -41,11 +42,14 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 		<?php endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
 		
-		<!-- pagintation -->
-		<div id="pagination" class="clearfix">
-			<div class="past-page"><?php previous_posts_link( 'newer' ); // Display a link to  newer posts, if there are any, with the text 'newer' ?></div>
-			<div class="next-page"><?php next_posts_link( 'older' ); // Display a link to  older posts, if there are any, with the text 'older' ?></div>
-		</div><!-- pagination -->
+		<div>
+			<div class="past-page">
+				<?php previous_posts_link( 'newer press' ); ?>
+			</div>
+			<div class="next-page">
+				<?php next_posts_link( 'older press' ); ?>
+			</div>
+		</div>
 
 
 	<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
@@ -55,4 +59,4 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		</article>
 
 	<?php endif; // OK, I think that takes care of both scenarios (having posts or not having any posts) ?>
-<?php get_footer(); // This fxn gets the footer.php file and renders it ?>
+<?php get_footer(); ?>
