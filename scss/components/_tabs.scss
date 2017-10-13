@@ -6,7 +6,18 @@
   margin-bottom: 60px;
 
   .fc-toolbar {
-    display: none;
+    .fc-button {
+      color: $white;
+      background-color: $black;
+      background-image: none;
+      border-color: $white;
+      margin-top: 0;
+      font-family: $site-font;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   .fc-unthemed .fc-today {
@@ -27,6 +38,13 @@
     .simcal-fullcalendar,
     .simcal-fullcalendar-grid {
       font-family: $site-font;
+
+      div[id*=fullcalendar-] .fc-state-disabled {
+        border-color: $white;
+        background-color: $black;
+        color: $white;
+        background-image: none;
+      }
     }
   }
 
