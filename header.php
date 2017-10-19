@@ -38,6 +38,15 @@
 <script src="https://use.fontawesome.com/8730f8dbff.js"></script>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87591977-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87591977-2');
+</script>
 
 <?php wp_head(); 
 // This fxn allows plugins, and Wordpress itself, to insert themselves/scripts/css/files
