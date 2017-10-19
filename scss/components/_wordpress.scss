@@ -1,0 +1,27 @@
+.the-content {
+
+  margin-bottom: 30px;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .alignleft, img.alignleft {
+    float: left;
+    margin-right: 18px;
+  }
+
+  .alignright, img.alignright {
+    float: right;
+    margin-left: 18px;
+  }
+
+  .aligncenter, img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+  }
+}
